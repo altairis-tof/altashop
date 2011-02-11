@@ -24,7 +24,7 @@ $jcart['path'] = '/altashop/altacart/jcart/';
 $jcart['form_action']	= '/checkout.php';
 
 // YOUR PAYPAL SECURE MERCHANT ACCOUNT ID
-$jcart['paypal_id']		= 'contact@altashop.org';
+$jcart['paypal_id']		= 'contact@altashop.org';  // your paypal account
 $jcart['paypal_cancel'] = 'http://localhost/altashop/go.php?id=checkout';
 $jcart['paypal_return'] = 'http://localhost/altashop/thanks.php';
 $jcart['paypal_notify'] = 'http://localhost/altashop/notify.php';
