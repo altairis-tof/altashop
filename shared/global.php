@@ -36,7 +36,7 @@
 define('YACS', TRUE);
 
 // include altacart
-require_once '/path_to_yacs/altacart/cart.php';
+require_once '/var/www/altashop/altacart/cart.php';
 
 // we will manage the cache by ourself
 if(is_callable('session_cache_limiter'))
