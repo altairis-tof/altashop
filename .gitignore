@@ -1,0 +1,42 @@
+# ignore htaccess at root level only
+/.htaccess
+
+# ignore uploaded files (in sub-folders)
+files/*/
+
+# ignore footprints
+footprints.php
+
+# ignore uploaded images (in sub-folders)
+images/*/
+
+# ignore uploaded archives
+/inbox
+
+# ignore netbeans metadata
+nbproject/
+
+# ignore parameter files
+parameters/
+!parameters/index.php
+
+# ignore temporary files
+temporary/
+!temporary/index.php
+
+# ignore temporary or processed scripts
+scripts/run_once/*.done
+scripts/staging/
+
+# ignore backup files
+*.bak
+
+# ignore special files
+*~
+*.swp
+*.svn
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
