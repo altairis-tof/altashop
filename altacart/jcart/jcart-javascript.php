@@ -178,8 +178,8 @@ session_start();
 
 		// SEND ITEM INFO VIA POST TO INTERMEDIATE SCRIPT WHICH CALLS jcart.php AND RETURNS UPDATED CART HTML
 		$.post('<?php echo $jcart['path'];?>jcart-relay.php', { "<?php echo $jcart['item_id']?>": itemId, "<?php echo $jcart['item_article']?>": itemArticle, "<?php echo $jcart['item_price']?>": itemPrice, "<?php echo $jcart['item_tax']?>": itemTax, "<?php echo $jcart['item_name']?>": itemName, "<?php echo $jcart['item_qty']?>": itemQty, "<?php echo $jcart['item_shop']?>": itemShop, "<?php echo $jcart['item_add']?>" : itemAdd, "action": action}, function(data){
-			$('#header_panel #jcart_line').html(data.line);
-			$('#extra_panel #jcart_resume').html(data.resume);
+			$('#jcart_line').html(data.line);
+			$('#jcart_resume').html(data.resume);
       // DISPLAY CHECKOUT PAGE IN WINDOW IF PRODUCT ADDED TO CART
       open_window(data.action, "R&eacute;capitulatif de votre panier");
 			$('.jcart-hide').remove();
@@ -221,8 +221,8 @@ session_start();
 
 		// SEND ITEM ID VIA GET TO INTERMEDIATE SCRIPT WHICH CALLS jcart.php AND RETURNS UPDATED CART HTML
 		$.get('<?php echo $jcart['path'];?>jcart-relay.php', { "jcart_remove": removeId}, function(data){
-			$('#header_panel #jcart_line').html(data.line);
-			$('#extra_panel #jcart_resume').html(data.resume);
+			$('#jcart_line').html(data.line);
+			$('#jcart_resume').html(data.resume);
 			$('#dialog_win #jcart').html(data.full);
 			$('.jcart-hide').remove();
     }, 'json');
@@ -256,8 +256,8 @@ session_start();
 
 				// SEND ITEM INFO VIA POST TO INTERMEDIATE SCRIPT WHICH CALLS jcart.php AND RETURNS UPDATED CART HTML
 				$.post('<?php echo $jcart['path'];?>jcart-relay.php', { "item_id": updateId, "item_qty": updateQty, "jcart_update_item": '<?php echo $jcart['text']['update_button'];?>'}, function(data){
-			$('#header_panel #jcart_line').html(data.line);
-			$('#extra_panel #jcart_resume').html(data.resume);
+			$('#jcart_line').html(data.line);
+			$('#jcart_resume').html(data.resume);
 			$('#dialog_win #jcart').html(data.full);
 			$('.jcart-hide').remove();
     }, 'json');
