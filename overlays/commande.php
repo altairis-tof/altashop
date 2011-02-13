@@ -269,24 +269,6 @@ class Commande extends Overlay {
 	 */
 	function setup() {
 		global $context;
-/*
-CREATE TABLE `yacs_orders` (
-  `id` mediumint(8) NOT NULL auto_increment,
-  `order_date` datetime NOT NULL default '0000-00-00 00:00:00',
-  `user_id` mediumint(8) NOT NULL default '0',
-  `payment_method` varchar(5) NOT NULL default '',
-  `total_ht` double NOT NULL default '0',
-  `tva` double NOT NULL default '0',
-  `port` double NOT NULL default '0',
-  `total_ttc` double NOT NULL default '0',
-  `status` smallint(6) NOT NULL default '1',
-  `page_id` mediumint(8) NOT NULL default '0',
-  PRIMARY KEY  (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `page_id` (`page_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
-
-*/
 
     // création table orders
 		$fields = array();
@@ -303,11 +285,10 @@ CREATE TABLE `yacs_orders` (
 
 		$indexes = array();
 		$indexes['PRIMARY KEY'] 	= "(id)";
-		$indexes['INDEX order_id'] = "(order_id)";
 		$indexes['INDEX user_id'] = "(user_id)";
 		$indexes['INDEX page_id'] = "(page_id)";
 
-		SQL::setup_table('orders', $fields, $indexes);
+		$ret = SQL::setup_table('orders', $fields, $indexes);
 
     // création table orders_lines
 		$fields = array();
@@ -327,7 +308,7 @@ CREATE TABLE `yacs_orders` (
 		$indexes['INDEX reference'] = "(reference)";
 		$indexes['INDEX product_id'] = "(product_id)";
 
-		return SQL::setup_table('orders_lines', $fields, $indexes);
+		return $ret . SQL::setup_table('orders_lines', $fields, $indexes);
 	}
 
 }
