@@ -116,7 +116,7 @@ Class Layout_cart_as_checkout extends Layout_interface {
       $text .= '</td></tr>';
       
       // bouton continuer vos achats
-      $boutique = Sections::get('boutiques-gresivaudan');
+      $boutique = Sections::get('boutique');
       $boutique_url = $context['url_to_root'].Sections::get_permalink($boutique);
       $text .= '<tr><td colspan=2><input type=button id="jcart-continue" onclick="document.location= \''.$boutique_url.'\';" value="Continuer vos achats">';
 
